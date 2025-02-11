@@ -1,13 +1,29 @@
 "use client"
-import { sampleFn } from '../../utils/some-server-side-fn';
+import React from 'react';
+import Slider from 'react-slick';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
+
 export default function Client() {
-  console.log("client com")
-   const res = sampleFn()
-      console.log(res)
+  const settings = {
+    dots: true,
+  };
   return (
-    <div>
-      <h1>Client Com</h1>
-      <p>This is the client com page</p>
+    <div className="image-slider-container">
+      <Slider {...settings}>
+        <div>
+          <img src="https://picsum.photos/400/200" />
+        </div>
+        <div>
+          <img src="https://picsum.photos/400/200" />
+        </div>
+        <div>
+          <img src="https://picsum.photos/400/200" />
+        </div>
+        <div>
+          <img src="https://picsum.photos/400/200" />
+        </div>
+      </Slider>
     </div>
-  )
+  );
 }
